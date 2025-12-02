@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Digital Ads Expert — Official Website</title>
+  <title>Digital Ads Expert — Official Website (Responsive)</title>
   <meta name="description" content="Digital Ads Expert — Meta Ads specialist. Get policy-safe ads, landing pages, Telegram growth systems & complete marketing setup." />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -23,54 +23,91 @@
     html,body{height:100%}
     body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:linear-gradient(180deg,#071024 0%, #081223 40%, #071733 100%);color:var(--text);-webkit-font-smoothing:antialiased}
 
-    header{position:sticky;top:12px;z-index:60;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;max-width:1150px;margin:0 auto}
+    /* Header */
+    header{position:sticky;top:12px;z-index:60;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;max-width:1150px;margin:0 auto}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:46px;border-radius:8px;box-shadow:0 6px 20px rgba(4,10,18,0.6)}
-    .brand-title{font-weight:700;font-size:18px;color:var(--text)}
+    .brand img{height:42px;border-radius:8px;box-shadow:0 6px 20px rgba(4,10,18,0.6)}
+    .brand-title{font-weight:700;font-size:16px;color:var(--text)}
 
-    nav{display:flex;gap:14px;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:10px}
+    /* Desktop nav (hidden on small screens) */
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px;font-size:14px}
     nav a:hover{color:var(--text);background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02))}
 
-    .container{max-width:1150px;margin:28px auto;padding:0 20px}
+    /* Mobile hamburger */
+    .nav-toggle{display:none}
+    .hamburger{display:none;flex-direction:column;gap:4px;padding:8px;cursor:pointer}
+    .hamburger span{width:22px;height:2px;background:var(--text);display:block;border-radius:2px}
 
-    .hero{display:flex;gap:28px;align-items:center;padding:46px;background:linear-gradient(135deg, rgba(14,165,164,0.06), rgba(6,182,212,0.03));border-radius:18px;box-shadow:0 12px 40px rgba(2,6,23,0.6)}
+    .container{max-width:1150px;margin:18px auto;padding:0 16px}
+
+    .hero{display:flex;gap:18px;align-items:center;padding:28px;background:linear-gradient(135deg, rgba(14,165,164,0.06), rgba(6,182,212,0.03));border-radius:16px;box-shadow:0 12px 40px rgba(2,6,23,0.6)}
     .hero-left{flex:1}
-    .lead{font-size:34px;line-height:1.05;margin:0 0 12px;font-weight:800}
-    .sub{color:var(--muted);margin:0 0 18px}
-    .cta{display:flex;gap:12px}
-    .btn{background:linear-gradient(90deg,var(--accent2),var(--accent));color:#042028;padding:12px 20px;border-radius:12px;font-weight:700;text-decoration:none;box-shadow:0 8px 30px rgba(6,182,212,0.12)}
+    .lead{font-size:30px;line-height:1.05;margin:0 0 10px;font-weight:800}
+    .sub{color:var(--muted);margin:0 0 14px;font-size:14px}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{background:linear-gradient(90deg,var(--accent2),var(--accent));color:#042028;padding:10px 16px;border-radius:12px;font-weight:700;text-decoration:none;box-shadow:0 8px 30px rgba(6,182,212,0.12);font-size:14px}
     .btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06)}
 
-    .hero-right{width:420px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:18px;border-radius:12px}
-    .stats{display:flex;gap:10px;justify-content:space-between}
-    .stat{flex:1;text-align:center;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
-    .stat .num{font-weight:800;font-size:18px}
-    .stat .label{color:var(--muted);font-size:13px}
+    .hero-right{width:360px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:14px;border-radius:12px}
+    .stats{display:flex;gap:8px;justify-content:space-between}
+    .stat{flex:1;text-align:center;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+    .stat .num{font-weight:800;font-size:16px}
+    .stat .label{color:var(--muted);font-size:12px}
 
-    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:28px}
-    .service{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);transition:transform .22s ease, box-shadow .22s ease}
-    .service:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(2,6,23,0.6)}
-    .service h4{margin:0 0 8px;color:var(--accent2)}
-    .service p{margin:0;color:var(--muted);font-size:14px}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+    .service{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);transition:transform .22s ease, box-shadow .22s ease}
+    .service:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(2,6,23,0.6)}
+    .service h4{margin:0 0 6px;color:var(--accent2);font-size:15px}
+    .service p{margin:0;color:var(--muted);font-size:13px}
 
-    .about{display:flex;gap:20px;align-items:center;margin-top:28px}
-    .about .image{width:340px;height:220px;border-radius:12px;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;color:#042028;font-weight:800;font-size:36px;box-shadow:0 12px 40px rgba(6,182,212,0.08)}
-    .about .text{flex:1;color:var(--muted)}
+    .about{display:flex;gap:12px;align-items:center;margin-top:18px}
+    .about .image{width:260px;height:170px;border-radius:12px;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;color:#042028;font-weight:800;font-size:28px;box-shadow:0 12px 40px rgba(6,182,212,0.08);overflow:hidden}
+    .about .text{flex:1;color:var(--muted);font-size:14px}
 
-    .contact-grid{display:grid;grid-template-columns:1fr 340px;gap:18px;margin-top:28px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .card h3{margin:0 0 8px;color:var(--accent)}
-    .card p{margin:0;color:var(--muted)}
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:14px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .card h3{margin:0 0 8px;color:var(--accent);font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
 
-    footer{text-align:center;padding:30px;margin-top:36px;color:var(--muted)}
+    footer{text-align:center;padding:20px;margin-top:24px;color:var(--muted);font-size:13px}
 
+    /* Small screen adjustments */
     @media (max-width:940px){
-      .hero{flex-direction:column}
+      header{padding:10px 14px}
+      .hamburger{display:flex}
+      nav{display:none}
+      .nav-toggle:checked + .hamburger + nav{display:flex;position:absolute;top:64px;left:12px;right:12px;background:linear-gradient(180deg, rgba(3,6,10,0.95), rgba(3,6,10,0.9));padding:12px;border-radius:12px;flex-direction:column;gap:8px;box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+
+      .container{padding:0 12px}
+      .hero{flex-direction:column;gap:14px;padding:18px}
+      .lead{font-size:22px}
       .hero-right{width:100%}
       .about{flex-direction:column}
+      .about .image{width:100%;height:180px}
       .contact-grid{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr}
+
+      /* Smaller stat sizes */
+      .stat .num{font-size:15px}
+
+      /* Buttons full width on mobile */
+      .cta .btn{flex:1;text-align:center;padding:12px}
+      .cta{flex-direction:column}
+
+      /* Reduce spacing in footer disclaimer */
+      footer div{font-size:12px;max-width:100%;padding:0 6px}
     }
+
+    /* Very small devices */
+    @media (max-width:420px){
+      .lead{font-size:20px}
+      .about .image{height:150px}
+      .brand img{height:36px}
+      .brand-title{font-size:15px}
+      .btn{font-size:13px;padding:10px}
+    }
+
   </style>
 </head>
 <body>
@@ -80,6 +117,15 @@
     <img src="https://digitaladsexpert.site/wp-content/uploads/2025/10/ChatGPT-Image-Oct-14-2025-at-12_09_19-PM.png" alt="Logo">
     <div class="brand-title">Digital Ads Expert</div>
   </div>
+
+  <!-- checkbox toggle for accessible hamburger -->
+  <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Toggle navigation">
+  <label for="nav-toggle" class="hamburger" aria-hidden="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
   <nav>
     <a href="#services">Services</a>
     <a href="#about">About</a>
@@ -100,9 +146,9 @@
     </div>
 
     <div class="hero-right">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-        <div style="font-weight:700">Trusted Results</div>
-        <div style="color:var(--muted);font-size:13px">Trusted by creators & agencies</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div style="font-weight:700;font-size:14px">Trusted Results</div>
+        <div style="color:var(--muted);font-size:12px">Trusted by creators & agencies</div>
       </div>
       <div class="stats">
         <div class="stat"><div class="num">1200+</div><div class="label">Clients</div></div>
@@ -113,7 +159,7 @@
   </section>
 
   <section id="services">
-    <h2 style="margin-top:28px">Services we offer</h2>
+    <h2 style="margin-top:18px">Services we offer</h2>
     <div class="services">
       <div class="service card">
         <h4>Meta Ads Setup</h4>
@@ -143,45 +189,44 @@
   </section>
 
   <section id="about">
-    <h2 style="margin-top:28px">About</h2>
+    <h2 style="margin-top:18px">About</h2>
     <div class="about">
       <div class="text">
-        <p style="font-size:15px;line-height:1.7;color:var(--muted)">
+        <p style="font-size:14px;line-height:1.6;color:var(--muted)">
           Digital Ads Expert is a performance-driven marketing studio focused on growth systems for <strong>trading educators, Telegram communities, and digital product creators</strong>.
           <br><br>
           We specialise in <strong>policy-safe Meta Ads</strong> backed by deep niche experience. Most trading creators struggle with ad rejections, unstable funnels, fake clicks, and low-quality leads — we solve all of this with a <strong>policy‑first setup</strong> that keeps accounts safe while scaling.
           <br><br>
           Our approach blends:
         </p>
-        <ul style="margin-top:10px;color:var(--muted);line-height:1.7;font-size:15px">
+        <ul style="margin-top:8px;color:var(--muted);line-height:1.6;font-size:14px;padding-left:18px">
           <li><strong>Ad engineering</strong> — structure, targeting, pixel, & anti‑rejection systems</li>
           <li><strong>Conversion-first landing pages</strong> — fast, modern & compliant UI</li>
           <li><strong>Telegram growth funnels</strong> — high-quality member acquisition</li>
           <li><strong>Secure payment setups</strong> — SOPs to avoid bank & platform risk</li>
         </ul>
-        <p style="margin-top:14px;font-size:15px;line-height:1.7;color:var(--muted)">
+        <p style="margin-top:10px;font-size:14px;line-height:1.6;color:var(--muted)">
           With <strong>1200+ client campaigns</strong> executed, we know exactly what works in the trading niche — and what gets rejected. Every system we deploy is built to be <strong>stable, scalable, and safe</strong>.
         </p>
       </div>
-      <div class="image" style="overflow:hidden;position:relative">
-  <!-- Replace the URL below with your image link -->
-  <img src="poster.png" alt="About Image" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-</div>
+      <div class="image">
+        <img src="poster.png" alt="About Image" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;">
+      </div>
     </div>
   </section>
 
   <!-- Credibility Bar -->
-  <section id="credibility" style="margin-top:40px;text-align:center">
-    <div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
-      <div style="color:var(--muted);font-size:14px">✔ 1200+ Happy Clients</div>
-      <div style="color:var(--muted);font-size:14px">✔ 95% Ad Approval Rate</div>
-      <div style="color:var(--muted);font-size:14px">✔ Trading Niche Specialists</div>
-      <div style="color:var(--muted);font-size:14px">✔ Proven Telegram Funnels</div>
+  <section id="credibility" style="margin-top:20px;text-align:center">
+    <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;background:rgba(255,255,255,0.02);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+      <div style="color:var(--muted);font-size:13px">✔ 1200+ Happy Clients</div>
+      <div style="color:var(--muted);font-size:13px">✔ 95% Ad Approval Rate</div>
+      <div style="color:var(--muted);font-size:13px">✔ Trading Niche Specialists</div>
+      <div style="color:var(--muted);font-size:13px">✔ Proven Telegram Funnels</div>
     </div>
   </section>
 
   <!-- Why Choose Us Section -->
-  <section id="why-us" style="margin-top:40px">
+  <section id="why-us" style="margin-top:20px">
     <h2>Why Choose Us</h2>
     <div class="services">
       <div class="service card">
@@ -204,7 +249,7 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" style="margin-top:40px">
+  <section id="testimonials" style="margin-top:20px">
     <h2>What Clients Say</h2>
     <div class="services">
       <div class="service card">
@@ -223,35 +268,31 @@
   </section>
 
 <section id="contact">
-    <h2 style="margin-top:28px">Contact</h2>
+    <h2 style="margin-top:18px">Contact</h2>
     <div class="contact-grid">
-      <div class="card" style="background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)">
+      <div class="card" style="background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)">
         <h3>Get in touch</h3>
         <p class="small">Interested in a strategy call or a custom proposal? Choose any method below — we reply within 24–48 hours.</p>
 
-        <div style="margin-top:14px;display:flex;flex-direction:column;gap:12px">
-          
+        <div style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
 
           <a href="https://t.me/DigitalAdsExpert" target="_blank" class="btn" style="text-align:center;background:linear-gradient(90deg,#2AABEE,#229ED9);color:white">💬 Message on Telegram</a>
 
           <a href="https://wa.me/919199661962" target="_blank" class="btn" style="text-align:center;background:linear-gradient(90deg,#25D366,#128C7E);color:white">📱 Chat on WhatsApp</a>
         </div>
       </div>
-      </div>
 
       <aside class="card" style="background:linear-gradient(135deg, rgba(6,182,212,0.06), rgba(14,165,164,0.04));border:1px solid rgba(6,182,212,0.12);box-shadow:0 12px 30px rgba(6,182,212,0.08);backdrop-filter:blur(4px)">
         <h3 style="color:var(--accent);font-weight:800;letter-spacing:0.3px">Brand Contact</h3>
 
-        
-
-        <p class="small" style="margin-top:14px">
+        <p class="small" style="margin-top:12px">
           <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--text)">
             💬 Telegram
           </span><br>
           <a href="https://t.me/DigitalAdsExpert" style="color:var(--accent);font-weight:600;text-decoration:none">@DigitalAdsExpert</a>
         </p>
 
-        <p class="small" style="margin-top:14px">
+        <p class="small" style="margin-top:12px">
           <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--text)">
             📍 Location
           </span><br>
@@ -265,7 +306,7 @@
 
 <footer>
   © <span id="year"></span> Digital Ads Expert • <a href="legal.html">Legal</a>
-  <div style="font-size:12px;color:#777;text-align:center;margin-top:20px;line-height:1.5;max-width:700px;margin-left:auto;margin-right:auto;">
+  <div style="font-size:12px;color:#777;text-align:center;margin-top:16px;line-height:1.4;max-width:700px;margin-left:auto;margin-right:auto;">
     This site is not a part of the Facebook™️ website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook™️ in any way. Facebook™️ is a trademark of Facebook Inc.
   </div>
 </footer>
